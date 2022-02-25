@@ -1,0 +1,119 @@
+body, html{
+    overscroll-behavior-y: contain;
+    background: linear-gradient(313deg, rgb(204, 204, 204) 0%, rgba(223, 217, 247, 0.841) 35%, rgb(199, 232, 240) 100%);
+
+    /* background: #E2E8F0; */
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.offcanvas{
+    background: linear-gradient(313deg, rgb(204, 204, 204) 0%, rgba(223, 217, 247, 0.841) 35%, rgb(199, 232, 240) 100%);
+
+}
+
+.list-group {
+    width: auto;
+    max-width: 460px;
+  }
+
+  .form-check-input:checked + .form-checked-content {
+    opacity: .5;
+  }
+
+  .form-check-input-placeholder {
+    pointer-events: none;
+    border-style: dashed;
+  }
+
+  .list-group-checkable {
+    display: grid;
+    gap: .5rem;
+    border: 0;
+  }
+  .list-group-checkable .list-group-item {
+    cursor: pointer;
+    border-radius: .5rem;
+  }
+  .list-group-item-check {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .list-group-item-check:hover + .list-group-item {
+    background-color: var(--bs-light);
+  }
+  .list-group-item-check:checked + .list-group-item {
+    color: #fff;
+    background-color: var(--bs-blue);
+  }
+  .list-group-item-check[disabled] + .list-group-item,
+  .list-group-item-check:disabled + .list-group-item {
+    pointer-events: none;
+    filter: none;
+    opacity: .5;
+  }
+
+
+
+
+
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    /* margin-bottom: 1rem; */
+    font-size: 2rem;
+    /* color: #fff; */
+    border-radius: 0.75rem;
+}
+  .feature-icon-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    /* margin-bottom: 1rem; */
+    font-size: 0.5rem;
+    /* color: #fff; */
+    /* border-radius: 0.75rem; */
+}
+
+.feature-icon-sm:hover {
+    color: #4285F4;
+    background-color: white;
+}
+
+.sm{
+    width: 2rem;
+    height: 2rem;
+}
+
+canvas:hover{
+    cursor: crosshair;
+}
+
+.card-body{
+    padding: .5rem .5rem;
+}
+::-webkit-scrollbar {
+    width: 12px;
+
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5; 
+
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #4285F4; 
+}

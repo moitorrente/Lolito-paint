@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolito maker</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <script defer src="Pixel.js"></script>
+    <script defer src="Layer.js"></script>
+    <script defer src="Paint.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" id="new-paint" aria-current="page">Nuevo</a></li>
+            <li class="nav-item"><a href="#" id="download" class="nav-link">Descargar</a></li>
+        </ul>
+        <hr>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row conntainer">
+            <div class="col-md-12">
+                <div id="canvas-container" class="d-flex justify-content-center col-md-12">
+                    <script defer src="sketch.js"></script>
+                </div>
+                <div class="list-group-checkable justify-content-center col-md-12">
+                    <div class="d-flex gap-5 justify-content-center">
+                        <div class="list-group my-3 mx-0 w-100">
+                            <input class="list-group-item-check" type="radio" name="mode" id="paint" value=""
+                                checked="">
+                            <label class="list-group-item feature-icon bg-gradient text-center w-100" for="paint">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    class="bi bi-brush" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.39 3.39 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3.122 3.122 0 0 0 .126-.75l-.793-.792zm1.44.026c.12-.04.277-.1.458-.183a5.068 5.068 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005a.031.031 0 0 1-.007.004zm3.582-3.043.002.001h-.002z" />
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="list-group my-3 mx-0 w-100">
+                            <input class="list-group-item-check" type="radio" name="mode" id="erase-pixels" value="">
+                            <label class="list-group-item feature-icon bg-gradient text-center w-100"
+                                for="erase-pixels">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    class="bi bi-eraser-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="list-group my-3 mx-0 w-100">
+                            <input class="list-group-item-check" type="checkbox" name="mirror" id="mirrorX" value="">
+                            <label class="list-group-item feature-icon bg-gradient text-center w-100" for="mirrorX">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    class="bi bi-symmetry-horizontal" viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.5 7a.5.5 0 0 0 .24-.939l-11-6A.5.5 0 0 0 2 .5v6a.5.5 0 0 0 .5.5h11zm.485 2.376a.5.5 0 0 1-.246.563l-11 6A.5.5 0 0 1 2 15.5v-6a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .485.376zM11.539 10H3v4.658L11.54 10z" />
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="list-group my-3 mx-0 w-100">
+                            <input class="list-group-item-check" type="checkbox" name="mirror" id="mirrorY" value="">
+                            <label class="list-group-item feature-icon bg-gradient text-center w-100" for="mirrorY">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    class="bi bi-symmetry-vertical" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7 2.5a.5.5 0 0 0-.939-.24l-6 11A.5.5 0 0 0 .5 14h6a.5.5 0 0 0 .5-.5v-11zm2.376-.484a.5.5 0 0 1 .563.245l6 11A.5.5 0 0 1 15.5 14h-6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .376-.484zM10 4.46V13h4.658L10 4.46z" />
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="list-group my-3 mx-0 w-100">
+                            <input class="list-group-item-check" type="checkbox" name="layers" value="">
+                            <label class="list-group-item feature-icon bg-gradient text-center w-100" data-bs-toggle="offcanvas" data-bs-target="#layerOffcanvas"
+                            aria-controls="layerOffcanvas" for="layers">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
+                                    <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z"/>
+                                  </svg>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="layerOffcanvas" aria-labelledby="layerOffcanvasLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" style="background-color: white;"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="col-md-12">
+                <div class="list-group list-group-checkable">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div
+                            class="card-header rounded bg-primary text-white py-2 d-flex gap-2 w-100 justify-content-between">
+                            <h5 class="my-0 fw-normal align-self-center">Layers
+                                <small id="layer-number" class="fs-6">(0)</small>
+                            </h5>
+                            <div>
+                                <button class="btn btn-sm btn-outline-light" style="width: 2rem; height: 2rem;"
+                                    id="duplicate-layer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-files" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-sm btn-outline-light" style="width: 2rem; height: 2rem;"
+                                    id="delete-layer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-sm btn-outline-light" style="width: 2rem; height: 2rem;"
+                                    id="new-layer">+
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body" id="layer-container" style="overflow-y: scroll; max-height: 80vh;">
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group list-group-checkable">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div
+                            class="card-header rounded bg-primary text-white py-2 d-flex gap-2 w-100 justify-content-between">
+                            <h5 class="my-0 fw-normal align-self-center">Presets
+                                <small id="preset-number" class="fs-6">(0)</small>
+                            </h5>
+                        </div>
+                        <div id="preset-container" style="overflow-y: scroll; max-height: 80vh;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
